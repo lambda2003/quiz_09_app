@@ -9,13 +9,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int num = 6;
+  int num = 7;
   int numIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("${num+1}단"),
+      appBar: AppBar(title: Text("${num}단"),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
@@ -29,9 +29,10 @@ class _HomeState extends State<Home> {
               height:150,
               child: CupertinoPicker(
                 itemExtent: 50,
-                scrollController: FixedExtentScrollController(initialItem:num),
+                scrollController: FixedExtentScrollController(initialItem:num-1),
                 onSelectedItemChanged: (index) {
-                  num = index;
+
+                  num = index+1;
                   setState(() {});
                 },
                 children: List.generate(
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
                 List.generate(
                   9, 
                   (index) => SizedBox(child: 
-                    Text('${num+1} x ${index+1} = ${(index+1)*(num+1)}'),
+                    Text('${num} x ${index+1} = ${(index+1)*num}'),
                   ),
                 ),
                       ),
