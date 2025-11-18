@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
               height:150,
               child: CupertinoPicker(
                 itemExtent: 50,
-                scrollController: FixedExtentScrollController(initialItem:6),
+                scrollController: FixedExtentScrollController(initialItem:num),
                 onSelectedItemChanged: (index) {
                   num = index;
                   setState(() {});
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                 List.generate(
                   9, 
                   (index) => SizedBox(child: 
-                    Text('${num+1} x ${index+1} = ${(index+1)*num}'),
+                    Text('${num+1} x ${index+1} = ${(index+1)*(num+1)}'),
                   ),
                 ),
                       ),
